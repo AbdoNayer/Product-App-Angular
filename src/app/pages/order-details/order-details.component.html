@@ -1,0 +1,144 @@
+<div class="py-6">
+  <div class="container">
+    <!-- View Info Order -->
+    <div class="flex items-center justify-between border-b pb-4 mb-9 sm:flex-col">
+      <div class="flex items-center gap-3">
+        <h3>Order Date : </h3>
+        <span class="text-primary font-bold">{{ orderData?.OrderDate | date : "medium" }}</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <h3>Payment Type :</h3>
+        <span class="text-primary font-bold">{{ orderData?.PaymentType }}</span>
+      </div>
+    </div>
+    <!-- Box View User Data -->
+    <div class="py-5">
+      <h4 class="flex items-center justify-center gap-3">
+        <i class="fa-solid fa-square text-primary rotate-[40deg]"></i>
+        <span class="font-bold text-[20px]">User Info Data</span>
+        <i class="fa-solid fa-square text-primary rotate-[40deg]"></i>
+      </h4>
+      <!-- Table View User Data -->
+      <div class="overflow-x-auto mt-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+          <thead>
+            <tr class="bg-gray-100">
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                User Name
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                User Email
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                User Phone
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                User Address
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                User Register Date
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ userData?.Name }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ userData?.Email }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ userData?.Phone }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ userData?.Address }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ userData?.RegisterDate | date : "medium" }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Box View Products Data -->
+    <div class="py-5">
+      <h4 class="flex items-center justify-center gap-3">
+        <i class="fa-solid fa-square text-primary rotate-[40deg]"></i>
+        <span class="font-bold text-[20px]">Products Data</span>
+        <i class="fa-solid fa-square text-primary rotate-[40deg]"></i>
+      </h4>
+      <!-- Table View Products Data -->
+      <div class="overflow-x-auto mt-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+          <thead>
+            <tr class="bg-gray-100">
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Product Img
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Product Name
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Product Price
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Quantity
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Available Pieces
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let item of productsData; let i = index"
+              class="hover:bg-gray-50"
+            >
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                <img
+                  [src]="item.ProductImg"
+                  alt="Product Image"
+                  class="m-auto rounded-md w-[50px] h-[50px]"
+                />
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ item?.ProductName }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ item?.ProductPrice }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ item?.Quantity }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ item?.AvailablePieces }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

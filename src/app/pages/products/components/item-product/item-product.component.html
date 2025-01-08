@@ -1,0 +1,63 @@
+<div
+  class="overflow-hidden m-4"
+  data-aos="fade-up"
+  data-aos-offset="200"
+  data-aos-easing="ease-in-sine"
+  [attr.data-aos-duration]="+item.ProductId * 100"
+>
+  <div class="group bg-white rounded-lg text-center border overflow-hidden">
+    <div class="border-b relative overflow-hidden">
+      <img
+        [src]="item.ProductImg"
+        alt="Product Image"
+        class="m-auto w-full h-[300px] group-hover:scale-105 transition-transform duration-500"
+      />
+      <div
+        *ngIf="item.AvailablePieces"
+        class="flex items-center gap-2 bg-white/70 p-1 px-4 rounded-md absolute top-[10px] left-[10px]"
+      >
+        <span class="text-gray-700">Available Pieces : </span>
+        <span class="font-bold text-[20px] text-primary">{{
+          item.AvailablePieces
+        }}</span>
+      </div>
+      <span  *ngIf="!item.AvailablePieces" class="bg-red-500 text-white p-1 px-4 rounded-md absolute top-[10px] left-[10px]">SOLD</span>
+    </div>
+    <div class="p-[20px]">
+      <div class="flex items-center justify-between">
+        <h4 class="font-bold text-[16px] mb-3">{{ item.ProductName }}</h4>
+        <span class="text-red-600 font-bold">{{ item.ProductPrice }} $</span>
+      </div>
+      <div
+        *ngIf="item.AvailablePieces"
+        class="flex items-center justify-between mt-3"
+      >
+        <button
+          (click)="addToCart()"
+          class="relative bg-primary rounded text-white px-[10px] h-[40px] flex items-center justify-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+        >
+          Add To Cart
+        </button>
+        <div class="flex items-center gap-3">
+          <button
+            (click)="decreaseQuantity()"
+            class="relative bg-primary rounded text-white w-[30px] h-[30px] flex items-center justify-center"
+          >
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <input
+            type="text"
+            [value]="quantity"
+            class="w-[60px] h-[30px] text-center border"
+          />
+          <button
+            (click)="increaseQuantity()"
+            class="relative bg-primary rounded text-white w-[30px] h-[30px] flex items-center justify-center"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

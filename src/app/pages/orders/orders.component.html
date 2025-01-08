@@ -1,0 +1,108 @@
+<div class="py-6">
+  <div class="container">
+    <div *ngIf="(itemsOrders | async)?.length ?? 0 > 0">
+      <!-- Table View Orders -->
+      <div class="overflow-x-auto mt-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+          <thead>
+            <tr class="bg-gray-100">
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Order ID
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Order Date
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Total Price
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Payment Method
+              </th>
+              <th
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let order of paginatedOrders; let i = index"
+              class="hover:bg-gray-50"
+            >
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ order.OrderId }}
+              </td>
+              <td class="px-6 py-4 border text-gray-700 text-center">
+                {{ order.OrderDate | date : "medium" }}
+              </td>
+              <td class="px-6 py-4 border text-red-700 font-bold text-center">
+                {{ calculateTotalPrice(order.Products) | currency }}
+              </td>
+              <td
+                class="px-6 py-4 border text-gray-700 text-center"
+                [ngClass]="{
+                  'text-green-700':
+                    order.PaymentType.toLowerCase() === 'online',
+                  'text-red-700': order.PaymentType.toLowerCase() !== 'online'
+                }"
+              >
+                {{ order.PaymentType }}
+              </td>
+              <td class="px-6 py-4 border">
+                <div class="flex items-center gap-3 justify-center">
+                  <button
+                    (click)="viewOrderDetails(order)"
+                    class="px-4 py-2 bg-blue-500 rounded-md"
+                    (click)="viewOrderDetails(order)"
+                  >
+                    <i class="fa-solid fa-eye text-white"></i>
+                  </button>
+                  <button
+                    class="px-4 py-2 bg-red-500 rounded-md"
+                    (click)="deleteOrder(order.OrderId)"
+                  >
+                    <i class="fa-solid fa-trash-can text-white"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="flex items-center justify-end mt-7">
+        <button
+          class="px-4 py-2 border bg-gray-200"
+          [disabled]="currentPage === 1"
+          (click)="changePage(currentPage - 1)"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <span class="px-4 py-2">Page {{ currentPage }}</span>
+        <button
+          class="px-4 py-2 border bg-gray-200"
+          [disabled]="
+            currentPage * itemsPerPage >= ((itemsOrders | async)?.length || 0)
+          "
+          (click)="changePage(currentPage + 1)"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Empty Data -->
+    <div *ngIf="(itemsOrders | async)?.length === 0">
+      <app-empty-data></app-empty-data>
+    </div>
+  </div>
+</div>

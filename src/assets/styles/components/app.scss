@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Font App
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+// Style Scroll App
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+// Body App
+
+* {
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  font-family: "Cairo", sans-serif !important;
+}
+
+.over-scroll{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  contain: size style layout;
+}

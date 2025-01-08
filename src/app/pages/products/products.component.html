@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="">
+    <!-- All Items Products -->
+    <div
+      class="grid justify-between md:grid-cols-1 lg:grid-cols-1 grid-cols-3 overflow-hidden relative z-10 pt-9"
+    >
+      <app-item-product
+        *ngFor="let item of itemsProducts | async; let i = index"
+        [item]="item"
+      >
+      </app-item-product>
+    </div>
+  </div>
+</div>
