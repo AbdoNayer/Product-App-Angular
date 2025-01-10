@@ -30,7 +30,14 @@ const routes: Routes = [
       {
         path: 'order/:id',
         loadChildren: () =>
-          import('../pages/order-details/order-details.module').then((m) => m.OrderDetailsModule),
+          import('../pages/order-details/order-details.module').then(
+            (m) => m.OrderDetailsModule
+          ),
+      },
+      {
+        path: 'cart',
+        loadChildren: () =>
+          import('../pages/cart/cart.module').then((m) => m.CartModule),
       },
     ],
   },

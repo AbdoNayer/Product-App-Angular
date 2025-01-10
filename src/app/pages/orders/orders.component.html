@@ -66,12 +66,12 @@
                   >
                     <i class="fa-solid fa-eye text-white"></i>
                   </button>
-                  <button
+                  <!-- <button
                     class="px-4 py-2 bg-red-500 rounded-md"
                     (click)="deleteOrder(order.OrderId)"
                   >
                     <i class="fa-solid fa-trash-can text-white"></i>
-                  </button>
+                  </button> -->
                 </div>
               </td>
             </tr>
@@ -101,8 +101,8 @@
       </div>
     </div>
     <!-- Empty Data -->
-    <div *ngIf="(itemsOrders | async)?.length === 0">
-      <app-empty-data></app-empty-data>
-    </div>
+    <app-empty-data
+      *ngIf="(itemsOrders | async)?.length === 0"
+    ></app-empty-data>
   </div>
 </div>

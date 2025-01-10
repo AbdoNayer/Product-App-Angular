@@ -1,0 +1,55 @@
+<div class="py-5 my-5">
+  <div class="container">
+    <div *ngIf="cartProducts.length > 0">
+      <div class="flex items-center justify-between mb-7">
+        <h4 class="font-bold text-[20px]">All Cart Products</h4>
+        <button
+          (click)="removeAllCart()"
+          class="relative bg-red-600 rounded gap-2 px-3 h-[40px] flex items-center justify-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+        >
+          <i class="fa-solid fa-trash-can text-white text-[12px]"></i>
+          <span class="mx-1 text-white">Remove All Products</span>
+        </button>
+      </div>
+      <table class="border-collapse border border-slate-500 w-full text-center">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 p-3">Product Name</th>
+            <th class="border border-gray-300 p-3">Product Img</th>
+            <th class="border border-gray-300 p-3">Product Price</th>
+            <th class="border border-gray-300 p-3">Quantity</th>
+            <th class="border border-gray-300 p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartProducts">
+            <td class="border border-gray-300 p-2">
+              <img
+                [src]="item.ProductImg"
+                class="w-[50px] h-[50px] rounded m-auto"
+              />
+            </td>
+            <td class="border border-gray-300 p-2">{{ item.ProductName }}</td>
+            <td class="border border-gray-300 p-2">
+              <span class="text-red-500 font-bold"
+                >{{ item.ProductPrice }} $</span
+              >
+            </td>
+            <td class="border border-gray-300 p-2">{{ item.quantity }}</td>
+            <td class="border border-gray-300 p-2">
+              <div class="flex items-center justify-center">
+                <button
+                  (click)="onRemoveItem(item)"
+                  class="mx-2 relative bg-red-600 rounded w-[35px] h-[35px] flex items-center justify-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+                >
+                  <i class="fa-solid fa-trash-can text-white text-[12px]"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <app-empty-data *ngIf="cartProducts.length == 0"></app-empty-data>
+  </div>
+</div>

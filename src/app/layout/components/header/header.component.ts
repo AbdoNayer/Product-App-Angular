@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicesService } from '../../../core/services/services.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  constructor() {}
+  valueCartItem: any = 0;
+
+  constructor(private servicesService: ServicesService) {
+    this.servicesService.counter.subscribe((res: any) => {
+      this.valueCartItem = res;
+    });
+  }
 }
