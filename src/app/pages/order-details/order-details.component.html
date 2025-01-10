@@ -1,10 +1,14 @@
 <div class="py-6">
   <div class="container">
     <!-- View Info Order -->
-    <div class="flex items-center justify-between border-b pb-4 mb-9 sm:flex-col">
+    <div
+      class="flex items-center justify-between border-b pb-4 mb-9 sm:flex-col"
+    >
       <div class="flex items-center gap-3">
-        <h3>Order Date : </h3>
-        <span class="text-primary font-bold">{{ orderData?.OrderDate | date : "medium" }}</span>
+        <h3>Order Date :</h3>
+        <span class="text-primary font-bold">{{
+          orderData?.OrderDate | date : "medium"
+        }}</span>
       </div>
       <div class="flex items-center gap-3">
         <h3>Payment Type :</h3>
@@ -12,7 +16,13 @@
       </div>
     </div>
     <!-- Box View User Data -->
-    <div class="py-5">
+    <div
+      class="py-5"
+      data-aos="fade-in"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="200"
+    >
       <h4 class="flex items-center justify-center gap-3">
         <i class="fa-solid fa-square text-primary rotate-[40deg]"></i>
         <span class="font-bold text-[20px]">User Info Data</span>
@@ -73,7 +83,13 @@
       </div>
     </div>
     <!-- Box View Products Data -->
-    <div class="py-5">
+    <div
+      class="py-5"
+      data-aos="fade-in"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="400"
+    >
       <h4 class="flex items-center justify-center gap-3">
         <i class="fa-solid fa-square text-primary rotate-[40deg]"></i>
         <span class="font-bold text-[20px]">Products Data</span>

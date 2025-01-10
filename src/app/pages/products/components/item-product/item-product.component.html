@@ -3,7 +3,7 @@
   data-aos="fade-up"
   data-aos-offset="200"
   data-aos-easing="ease-in-sine"
-  [attr.data-aos-duration]="+item.ProductId * 100"
+  [attr.data-aos-duration]="(index + 1) * 100"
 >
   <div class="group bg-white rounded-lg text-center border overflow-hidden">
     <div class="border-b relative overflow-hidden">
@@ -33,10 +33,10 @@
         class="flex items-center justify-between mt-3"
       >
         <button
-          (click)="addToCart()"
+          (click)="addOrder()"
           class="relative bg-primary rounded text-white px-[10px] h-[40px] flex items-center justify-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
         >
-          Add To Cart
+          Add Order
         </button>
         <div class="flex items-center gap-3">
           <button

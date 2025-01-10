@@ -7,6 +7,7 @@
       <app-item-product
         *ngFor="let item of itemsProducts | async; let i = index"
         [item]="item"
+        [index]="i"
       >
       </app-item-product>
     </div>

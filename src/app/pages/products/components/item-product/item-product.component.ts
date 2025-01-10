@@ -10,6 +10,7 @@ import { ServicesService } from '../../../../core/services/services.service';
 })
 export class ItemProductComponent implements OnInit {
   @Input() item!: Products;
+  @Input() index!: number;
   quantity: number = 1;
 
   constructor(
@@ -36,7 +37,7 @@ export class ItemProductComponent implements OnInit {
     }
   }
 
-  addToCart() {
+  addOrder() {
     const productToAdd = {
       ...this.item,
       quantity: this.quantity,
