@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Products } from '../../../../core/models/products';
+import { ToasterService } from '../../../../shared/services/toaster.service';
 
 @Component({
   selector: 'app-item-product',
@@ -9,6 +10,8 @@ import { Products } from '../../../../core/models/products';
 export class ItemProductComponent implements OnInit {
   @Input() item!: Products;
   quantity: number = 1;
+
+  constructor(private toasterService: ToasterService) {}
 
   ngOnInit(): void {}
 
@@ -30,5 +33,6 @@ export class ItemProductComponent implements OnInit {
       quantity: this.quantity,
     };
     console.log('productToAdd', productToAdd);
+    this.toasterService.error('helloi');
   }
 }
