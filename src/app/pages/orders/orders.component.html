@@ -13,27 +13,27 @@
           <thead>
             <tr class="bg-gray-100">
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Order ID
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Order Date
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Total Price
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Payment Method
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Actions
               </th>
@@ -44,17 +44,21 @@
               *ngFor="let order of paginatedOrders; let i = index"
               class="hover:bg-gray-50"
             >
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ order.OrderId }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ order.OrderDate | date : "medium" }}
               </td>
               <td class="px-6 py-4 border text-red-700 font-bold text-center">
                 {{ calculateTotalPrice(order.Products) | currency }}
               </td>
               <td
-                class="px-6 py-4 border text-gray-700 text-center"
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
                 [ngClass]="{
                   'text-green-700':
                     order.PaymentType.toLowerCase() === 'online',

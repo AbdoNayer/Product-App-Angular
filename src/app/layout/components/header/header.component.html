@@ -2,7 +2,7 @@
   class="p-[15px] lg:p-[10px] sm:p-[20px] border-b sticky top-0 z-[999] bg-white"
 >
   <div class="container relative z-30">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between xs:flex-col">
       <a routerLink="/">
         <img
           class="max-w-[100px]"
@@ -10,13 +10,13 @@
           alt=""
         />
       </a>
-      <div>
-        <ul class="flex items-center">
+      <div class="flex items-center justify-between flex-1 xs:w-full xs:mt-4 ">
+        <ul class="flex items-center justify-center gap-8 flex-1 xs:justify-start">
           <li>
             <a
               routerLink="/products"
               routerLinkActive="active"
-              class="text-gray-400 mx-6 relative transition duration-500 hover:text-primary after:block after:content-[''] after:absolute after:h-[2px] after:bg-primary after:left-0 after:bottom-[-5px] after:w-[50%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              class="text-gray-400 relative transition duration-500 hover:text-primary after:block after:content-[''] after:absolute after:h-[2px] after:bg-primary after:left-0 after:bottom-[-5px] after:w-[50%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Products
             </a>
@@ -25,25 +25,25 @@
             <a
               routerLink="/orders"
               routerLinkActive="active"
-              class="text-gray-400 mx-6 relative transition duration-500 hover:text-primary after:block after:content-[''] after:absolute after:h-[2px] after:bg-primary after:left-0 after:bottom-[-5px] after:w-[50%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              class="text-gray-400 relative transition duration-500 hover:text-primary after:block after:content-[''] after:absolute after:h-[2px] after:bg-primary after:left-0 after:bottom-[-5px] after:w-[50%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Orders
             </a>
           </li>
         </ul>
-      </div>
-      <div class="flex items-center">
-        <a
-          routerLink="/cart"
-          class="ms-4 relative bg-black rounded text-white w-[40px] h-[40px] flex items-center justify-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
-        >
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span
-            class="absolute top-[-5px] right-[-5px] rounded-full w-[17px] h-[17px] bg-primary text-white text-[11px] flex items-center justify-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+        <div class="flex items-center">
+          <a
+            routerLink="/cart"
+            class="ms-4 relative bg-black rounded text-white w-[40px] h-[40px] flex items-center justify-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
           >
-            {{ valueCartItem }}
-          </span>
-        </a>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              class="absolute top-[-5px] right-[-5px] rounded-full w-[17px] h-[17px] bg-primary text-white text-[11px] flex items-center justify-center shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+            >
+              {{ valueCartItem }}
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -34,27 +34,27 @@
           <thead>
             <tr class="bg-gray-100">
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 User Name
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 User Email
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 User Phone
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 User Address
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 User Register Date
               </th>
@@ -62,19 +62,29 @@
           </thead>
           <tbody>
             <tr>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ userData?.Name }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ userData?.Email }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ userData?.Phone }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ userData?.Address }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ userData?.RegisterDate | date : "medium" }}
               </td>
             </tr>
@@ -101,27 +111,27 @@
           <thead>
             <tr class="bg-gray-100">
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Product Img
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Product Name
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Product Price
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Quantity
               </th>
               <th
-                class="px-6 py-3 border text-center text-sm font-medium text-gray-600"
+                class="px-6 py-3 border text-center text-sm font-medium text-gray-600 whitespace-nowrap"
               >
                 Available Pieces
               </th>
@@ -132,23 +142,33 @@
               *ngFor="let item of productsData; let i = index"
               class="hover:bg-gray-50"
             >
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 <img
                   [src]="item.ProductImg"
                   alt="Product Image"
                   class="m-auto rounded-md w-[50px] h-[50px]"
                 />
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ item?.ProductName }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ item?.ProductPrice }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ item?.Quantity }}
               </td>
-              <td class="px-6 py-4 border text-gray-700 text-center">
+              <td
+                class="px-6 py-4 border text-gray-700 text-center whitespace-nowrap"
+              >
                 {{ item?.AvailablePieces }}
               </td>
             </tr>
